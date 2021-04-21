@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="card">
+        <h3 class="text-center"> hc ssf ultimatum</h3>
+        <div class="card-body">
+            <table class="table table-stripped">
+                <thead>
+                    <th>Rank</th>
+                    <th>Account</th>
+                    <th>Character</th>
+                    <th>Character Class</th>
+                    <th>Level</th>
+                    <th>Experience</th>
+                    <th>Dead</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let gamer of gamers">
+                        <td> {{gamer.id}} </td>
+                        <td> {{gamer.account}} </td>
+                        <td> {{gamer.character}} </td>
+                        <td> {{gamer.characterClass}} </td>
+                        <td> {{gamer.level}} </td>
+                        <td> {{gamer.experience}} </td>
+                        <td> {{gamer.dead}} </td>
+                    </tr>
+                </tbody>
+
+            </table>        
+        </div>
+    </div>
+</div>
