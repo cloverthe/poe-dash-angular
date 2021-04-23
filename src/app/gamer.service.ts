@@ -7,11 +7,15 @@ import { Gamer } from './gamer';
   providedIn: 'root'
 })
 export class GamerService {
-  private baseUrl = "http://localhost:8080/players/all";
+  private baseUrl = "http://localhost:8080/players";
   constructor(private http: HttpClient) { }
   
   getGamers() : Observable<Gamer[]> {
-    return this.http.get<Gamer[]>(`${this.baseUrl}`)
+    return this.http.get<Gamer[]>(`${this.baseUrl}/all`)
   }
+
+  getGamersByName(name: any) : Observable<Gamer[]> {
+    return this.http.get<Gamer[]>(`${this.baseUrl}/searchByAccount/${name}`)
+  } 
 
 }

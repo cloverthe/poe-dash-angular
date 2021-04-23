@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http'
 import { GamerComponent } from './gamer/gamer.component';
+import { GamerService } from './gamer.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { GamerComponent } from './gamer/gamer.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [GamerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,12 +9,20 @@ import { GamerService } from '../gamer.service';
 })
 export class GamerComponent implements OnInit {
 
-  private gamers: Gamer[];
+  gamers: Gamer[];
+  inputValue = '';
   constructor(private gamerService : GamerService) { }
+
+  onInput(event: KeyboardEvent){
+    this.inputValue = (<HTMLInputElement>event.target).value;
+    this.gamerService.getGamersByName(this.inputValue).subscribe((data: Gamer[]) => {
+      this.gamers = data;
+    })
+  }
 
   ngOnInit(): void {
     this.gamerService.getGamers().subscribe((data: Gamer[]) => {
-      console.log(data);
+      // console.log(data);
       this.gamers = data;
     })
   }
