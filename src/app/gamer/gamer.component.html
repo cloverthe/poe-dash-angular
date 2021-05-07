@@ -1,8 +1,10 @@
 <div class="container">
     <div class="card">
         <h3 class="text-center"> hc ssf ultimatum</h3>
-        <input type="text" (keyup.enter) = "onInput($event)">
+        <input type="text" class="searchfield" (keyup.enter) = "onInput($event)" placeholder="Account name...">
         <div class="card-body">
+            <div *ngIf="gamers.length !== 0; else notfound">
+
             <table class="table table-stripped">
                 <thead>
                     <th>Rank</th>
@@ -13,8 +15,8 @@
                     <th>Experience</th>
                     <th>Dead</th>
                 </thead>
-                <tbody>
-                    <tr *ngFor = "let gamer of gamers">
+                <tbody> 
+                    <tr *ngFor = "let gamer of gamers" class="current-gamer">
                         <td>  {{gamer.id}} </td>
                         <td> {{gamer.account}} </td>
                         <td> {{gamer.character}} </td>
@@ -25,7 +27,26 @@
                     </tr>
                 </tbody>
 
-            </table>        
+            </table>  
+        </div>      
         </div>
     </div>
+    <ng-template #notfound>
+        <div class="notfound">
+            <p>Character with this name not present</p>
+        </div>
+    </ng-template>
+
+    <div class="pagination">
+        <ul>
+            <li>
+                <button class=btn (click)=listBackward()>&larr;</button>
+            </li>
+            <li>
+                <button class=btn (click)=listForward()>&rarr;</button>
+            </li>
+
+        </ul>
+    </div>
+
 </div>

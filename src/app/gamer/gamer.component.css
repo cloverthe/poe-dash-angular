@@ -1,0 +1,35 @@
+.card {
+    background-color: whitesmoke
+}
+.searchfield {
+    border: 1px lightseagreen solid;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.current-gamer:hover {
+    border: 2px cornflowerblue solid;
+    border-radius: 2px;
+}
+
+.pagination ul{
+    margin: 10px auto;
+
+    list-style-type: none;
+    display: flex;
+    place-content: space-between;
+}
+.btn{
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 5px;
+    background-color: turquoise;
+    margin: 0 5px 0 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+div .notfound {
+    display: flex;
+    place-content: space-between;
+    margin: auto;
+}

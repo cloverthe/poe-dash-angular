@@ -21,10 +21,27 @@ export class GamerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.gamerService.getGamers().subscribe((data: Gamer[]) => {
-      // console.log(data);
+    this.gamerService.getGamersByPage().subscribe( data => {
       this.gamers = data;
     })
   }
+  showDebug(obj: any){
+    console.log(obj)
+  }
 
+  listBackward(){
+    console.log(this.gamerService)
+    if(this.gamerService.start === 0) return
+    this.gamerService.start--;
+    this.gamerService.getGamersByPage().subscribe (data => {
+      this.gamers = data;
+    })
+  }
+  listForward(){
+    console.log(this.gamerService)
+    this.gamerService.start++;
+    this.gamerService.getGamersByPage().subscribe(data => {
+      this.gamers = data;
+    })
+  }
 }
